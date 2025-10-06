@@ -7,16 +7,22 @@
 ---
 
 <p align="center">
-  <strong>🚀 Project Title</strong><br/>
-  <em>A short tagline or description of your project</em>
+  <strong>🚀 EnableLife: A Unified Healthcare & Disability Support Platform</strong><br/>
+  <em>A The hub for medicine, doctors, and essential disability services in one place</em>
 </p>
 
 ---
 
 ## 📖 Project Description
-✨ **Problem Statement:** What problem are you solving?  
-💡 **Proposed Solution:** How does your project solve it?  
-🎯 **Target Users / Use Cases:** Who benefits from your solution?  
+✨ **Problem Statement: A unified platform to connect people with disabilities to essential services, including medicine, surgical supplies, and professional healthcare bookings.  
+💡 **Proposed Solution: We transitioned the project from mock client-side data to a functional, modular Node.js/Express backend API, implementing secure authentication (JWT), increasing product stock to 500 across the inventory, and enabling real-time stock-checked order processing.  
+🎯 **Target Users / Use Cases: Concise: 
+
+The platform serves individuals with disabilities and their caregivers, enabling easy access to medical supplies, professional healthcare, and daily living assistance.
+
+Action-Focused: Anyone facing mobility or health challenges, including patients, caregivers, and family members, who need to book medical services and order specialized supplies from home.
+
+Broadest: Individuals requiring convenient access to specialized services, including medicine, surgical goods, diagnostics, home nursing, and psychological counseling.
 
 ---
 
