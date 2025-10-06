@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crutches - Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Product Details</h1>
+        <p class="header-tagline">Get all the information you need before ordering</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html" class="active">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="container">
+    <div class="product-layout">
+      
+      <div class="product-images">
+        <img src="Images/crutches.jpeg" alt="Adjustable Forearm Crutches" class="main-image">
+      </div>
+      
+      <div class="product-info">
+        <h1>Adjustable Forearm Crutches (Pair)</h1>
+        <p class="price">₹1,500</p>
+        
+        <div class="description">
+          <h3>Key Specifications</h3>
+          <ul>
+            <li>**Material:** High-grade Aluminum Alloy.</li>
+            <li>**Adjustability:** Height adjustable cuff and leg for personalized fit.</li>
+            <li>**Color:** Chrome/Grey Finish.</li>
+          </ul>
+
+          <h3>About this Item (Features)</h3>
+          <ul>
+            <li>**Ergonomic Design:** Forearm cuffs provide better control and stability compared to underarm crutches.</li>
+            <li>**Comfortable Grip:** Soft, contoured hand grips reduce pressure and fatigue during long-term use.</li>
+            <li>**Lightweight:** Made from lightweight aluminum, making them easy to maneuver without compromising strength.</li>
+            <li>**Safety:** Non-slip, durable rubber tips provide excellent traction on various surfaces.</li>
+          </ul>
+        </div>
+        
+        <div class="order-box">
+             <p style="margin-bottom: 10px; font-weight: bold; color: #333;">Price: ₹1,500</p>
+             <button class="btn" onclick="addToCart('Forearm Crutches', 1500); window.location.href='cart.html'">Add to Cart</button>
+             <p style="font-size: 0.9em; color: #555; margin-top: 15px;">Delivery in 3-5 business days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

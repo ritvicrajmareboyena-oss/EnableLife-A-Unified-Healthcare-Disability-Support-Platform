@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Shopping Cart - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Your Shopping Cart</h1>
+        <p class="header-tagline">Review your selected medicines and proceed to order</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html" class="active">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section id="cart" class="cart-container">
+    <h2>Items in Your Cart</h2>
+    
+    <ul id="cartItems"></ul>
+    
+    <div class="cart-total">
+        Total: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <div class="cart-buttons">
+        <a href="checkout.html"><button class="proceed-btn">Proceed to Checkout</button></a>
+        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Ensure updateCart() runs when the page loads to display content
+    updateCart(); 
+  </script>
+</body>
+</html>

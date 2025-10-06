@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surgical Items - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Surgical Items</h1>
+        <p class="header-tagline">Providing quality equipment for better accessibility</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html" class="active">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="hero">
+    <h1>Top Quality Surgical Supplies</h1>
+    <p>Reliable, safe, and built to improve everyday mobility and care.</p>
+  </section>
+
+  <section>
+    <h2>Our Surgical Supplies</h2>
+    <div class="grid" id="card-list">
+      <div class="card" data-name="wheelchair">
+        <img src="Images/wheelchair.jpeg" alt="Wheelchair">
+        <h3>Wheelchairs</h3>
+        <p>Durable and comfortable for everyday mobility needs.</p>
+        <a href="wheelchair-detail.html" class="btn">Order Now</a>
+      </div>
+
+      <div class="card" data-name="crutches">
+        <img src="Images/crutches.jpeg" alt="Crutches">
+        <h3>Crutches</h3>
+        <p>Lightweight and adjustable for better support and ease of use.</p>
+        <a href="crutches-detail.html" class="btn">Order Now</a>
+      </div>
+
+      <div class="card" data-name="walker">
+        <img src="Images/walker.jpeg" alt="Walker">
+        <h3>Walkers</h3>
+        <p>Reliable walking assistance designed for safety and stability.</p>
+        <a href="surgical-product-detail.html?product=Walkers" class="btn">Order Now</a>
+      </div>
+
+      <div class="card" data-name="bed assist rails">
+        <img src="Images/bed-rail.jpeg" alt="Bed Assist Rail">
+        <h3>Bed Assist Rails</h3>
+        <p>Enhance independence and prevent falls with easy-to-install support rails.</p>
+        <a href="surgical-product-detail.html?product=Bed%20Assist%20Rails" class="btn">Order Now</a>
+      </div>
+
+      <div class="card" data-name="surgical gloves">
+        <img src="Images/gloves.jpeg" alt="Surgical Gloves">
+        <h3>Surgical Gloves</h3>
+        <p>Premium quality gloves for hygienic and safe medical procedures.</p>
+        <a href="surgical-product-detail.html?product=Surgical%20Gloves" class="btn">Order Now</a>
+      </div>
+
+      <div class="card" data-name="first aid kits">
+        <img src="Images/first-aid.jpeg" alt="First Aid Kit">
+        <h3>First Aid Kits</h3>
+        <p>Complete kits with essential items for emergency preparedness.</p>
+        <a href="surgical-product-detail.html?product=First%20Aid%20Kits" class="btn">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Need Help Choosing the Right Product?</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Our team is ready to guide you in selecting the best mobility and care equipment for your needs.
+      <br><br>
+      <a href="contact.html" class="btn">Contact Us Today</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  // Add this line to call the new function on page load
+  loadProducts('surgical');
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disability Support Hub - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Disability Support Hub</h1>
+        <p class="header-tagline">Empowering lives through care, accessibility, and compassion ❤️</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+    <a href="exercises.html">Exercises</a>
+    <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+  
+  <section class="hero">
+    <h1>Welcome to Disability Support Hub</h1>
+    <p>"Your limitation—it’s only your imagination. Let’s create possibilities "</p><br>
+    <a href="contact.html" class="btn" style="margin-top:20px;">Get in Touch</a>
+  </section>
+
+
+  <section>
+    <h2>Explore Our Services</h2>
+    <div class="grid" id="card-list">
+      <div class="card" data-name="Surgical Equipment tools">
+        <img src="Images/surgical.jpeg" alt="Surgical Equipment">
+        <h3>Surgical Equipment</h3>
+        <p>Providing high-quality surgical tools and accessibility-focused products.</p>
+        <a href="surgical.html" class="btn">View Items</a>
+      </div>
+
+
+      <div class="card" data-name="Medicine store pharmacy">
+        <img src="Images/medicine.jpeg" alt="Medicines">
+        <h3>Medicines</h3>
+        <p>Reliable medicines delivered to your doorstep with care and accuracy.</p>
+        <a href="medicine.html" class="btn">Shop Medicines</a>
+      </div>
+
+      <div class="card" data-name="Physiotherapy Support exercise">
+        <img src="Images/physiotherapy.jpeg" alt="Physiotherapy">
+        <h3>Physiotherapy Support</h3>
+        <p>Get expert physiotherapy consultations and home-based support solutions.</p>
+        <a href="physiotherapy.html" class="btn">Book Session</a>
+      </div>
+
+
+      <div class="card" data-name="Qualified Doctors specialists">
+        <img src="Images/doctors.jpeg" alt="Doctors">
+        <h3>Qualified Doctors</h3>
+        <p>Connect with trusted healthcare professionals for personalized care.</p>
+        <a href="doctors.html" class="btn">Meet Our Doctors</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Us</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="Images/motivation.jpg" alt="Motivation">
+        <h3>Our Mission</h3>
+        <p>We aim to provide accessibility, care, and support to empower lives and foster independence.</p>
+      </div>
+      <div class="card">
+        <h3>What We Offer</h3>
+        <p>From surgical equipment to physiotherapy support, our range of services is tailored to make healthcare accessible to everyone.</p>
+      </div>
+      <div class="card">
+        <h3>Join Our Community</h3>
+        <p>Together, we can create opportunities, break barriers, and make a difference in the lives of many.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+    <p><a href="contact.html" style="color:#ff7e5f;">Contact Us</a> | <a href="orders.html" style="color:#ff7e5f;">Orders</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

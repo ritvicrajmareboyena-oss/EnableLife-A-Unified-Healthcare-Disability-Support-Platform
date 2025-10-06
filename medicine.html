@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medicine Store - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Medicine Store</h1>
+        <p class="header-tagline">Search, find, and order your medicines with ease</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html" class="active">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="hero">
+    <h1>Find the Medicines You Need</h1>
+    <p>Quickly search, add to cart, and get medicines delivered to your doorstep.</p>
+  </section>
+
+  <section id="medicine-list" class="grid container">
+    <div class="card" data-name="Paracetamol">
+      <img src="Images/medicine1.jpeg" alt="Paracetamol">
+      <h3>Paracetamol</h3>
+      <p>₹50</p>
+      <button onclick="addToCart('Paracetamol', 50)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-name="Insulin">
+      <img src="Images/medicine2.jpeg" alt="Insulin">
+      <h3>Insulin</h3>
+      <p>₹200</p>
+      <button onclick="addToCart('Insulin', 200)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-name="Pain Relief Gel">
+      <img src="Images/medicine3.jpeg" alt="Pain Relief Gel">
+      <h3>Pain Relief Gel</h3>
+      <p>₹150</p>
+      <button onclick="addToCart('Pain Relief Gel', 150)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-name="Cough Syrup">
+      <img src="Images/medicine4.jpeg" alt="Cough Syrup">
+      <h3>Cough Syrup</h3>
+      <p>₹120</p>
+      <button onclick="addToCart('Cough Syrup', 120)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-name="Vitamin C Tablets">
+      <img src="Images/medicine5.jpeg" alt="Vitamin C Tablets">
+      <h3>Vitamin C Tablets</h3>
+      <p>₹90</p>
+      <button onclick="addToCart('Vitamin C Tablets', 90)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-name="Antiseptic Cream">
+      <img src="Images/medicine6.jpeg" alt="Antiseptic Cream">
+      <h3>Antiseptic Cream</h3>
+      <p>₹110</p>
+      <button onclick="addToCart('Antiseptic Cream', 110)">Add to Cart</button>
+    </div>
+  </section>
+
+  
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  // Add this line to call the new function on page load
+  loadProducts('medicine');
+</script>
+</body>
+</html>

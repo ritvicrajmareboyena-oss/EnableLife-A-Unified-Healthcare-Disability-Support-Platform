@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Physiotherapy - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Physiotherapy</h1>
+        <p class="header-tagline">Personalized care to help you recover and regain strength</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html" class="active">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="hero">
+    <h1>Recover with Expert Physiotherapists</h1>
+    <p>Our physiotherapists specialize in rehabilitation and post-surgery recovery to help you regain mobility and independence.</p>
+  </section>
+
+  <section class="grid container" id="card-list" style="margin-top:40px;">
+    <div class="card" data-name="John Paralysis Recovery">
+      <img src="Images/physio1.webp" alt="John" class="physio-img">
+      <h3>John</h3>
+      <p>Specialist: Paralysis Recovery</p>
+      <p class="experience">Experience: 10+ Years</p>
+      <button onclick="bookNow('John - Paralysis Recovery')" class="btn">Book Session</button>
+    </div>
+
+    <div class="card" data-name="Sneha Post-surgery Rehabilitation">
+      <img src="Images/physio2.jpeg" alt="Sneha" class="physio-img">
+      <h3>Sneha</h3>
+      <p>Specialist: Post-surgery Rehabilitation</p>
+      <p class="experience">Experience: 8+ Years</p>
+      <button onclick="bookNow('Sneha - Post-surgery Rehab')" class="btn">Book Session</button>
+    </div>
+
+    <div class="card" data-name="Rajesh Sports Injury Recovery">
+      <img src="Images/physio3.jpeg" alt="Rajesh" class="physio-img">
+      <h3>Rajesh</h3>
+      <p>Specialist: Sports Injury Recovery</p>
+      <p class="experience">Experience: 6+ Years</p>
+      <button onclick="bookNow('Rajesh - Sports Injury Recovery')" class="btn">Book Session</button>
+    </div>
+
+    <div class="card" data-name="Ananya Geriatric Physiotherapy">
+      <img src="Images/physio4.jpeg" alt="Ananya" class="physio-img">
+      <h3>Ananya</h3>
+      <p>Specialist: Geriatric Physiotherapy</p>
+      <p class="experience">Experience: 12+ Years</p>
+      <button onclick="bookNow('Ananya - Geriatric Physiotherapy')" class="btn">Book Session</button>
+    </div>
+  </section>
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Book Physiotherapy Session</h2>
+      <form id="bookingForm">
+        <label for="patientName">Your Name:</label>
+        <input type="text" id="patientName" name="patientName" placeholder="Enter your name" required>
+
+        <label for="appointmentDate">Preferred Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+        <label for="appointmentTime">Preferred Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+        <button type="submit" class="btn">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('bookingModal');
+    const modalTitle = document.getElementById('modalTitle');
+
+    // Open booking modal
+    function bookNow(therapistName) {
+      modal.style.display = 'block';
+      modalTitle.textContent = `Book Session with ${therapistName}`;
+    }
+
+    // Close modal
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside (Verified Fix)
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Handle form submission
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your physiotherapy session has been booked successfully!');
+      closeModal();
+      this.reset();
+    });
+  </script>
+</body>
+</html>

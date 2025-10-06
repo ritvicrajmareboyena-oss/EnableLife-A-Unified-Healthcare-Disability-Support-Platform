@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Product Details</h1>
+        <p class="header-tagline">Get all the information you need before ordering</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html" class="active">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="container">
+    <div id="product-content" class="product-layout">
+        <p style="text-align:center; width:100%;">Loading product information...</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Data for generic surgical items (Image paths updated to Images/ folder)
+    const surgicalProductData = {
+        "Walkers": {
+            name: "Standard Folding Walker",
+            price: 1200,
+            image: "Images/walker.jpeg",
+            specs: ["Material: Aluminum Alloy", "Adjustability: Height adjustable legs", "Feature: Single-button folding mechanism"],
+            description: "A stable and reliable walker designed for maximum safety and support. Ideal for users needing extra assistance with balance and mobility. Lightweight frame is easy to lift and transport."
+        },
+        "Bed Assist Rails": {
+            name: "Home Bed Safety Rail",
+            price: 2500,
+            image: "Images/bed-rail.jpeg",
+            specs: ["Material: Durable powder-coated steel", "Installation: Securely fastens to bed frame", "Feature: Provides a safe handhold for transferring in and out of bed"],
+            description: "Enhance independence and safety by installing this sturdy rail to your bedside. Helps prevent accidental falls during the night and assists with standing up from a lying position."
+        },
+        "Surgical Gloves": {
+            name: "Disposable Nitrile Gloves (Box of 100)",
+            price: 750,
+            image: "Images/gloves.jpeg",
+            specs: ["Material: Nitrile (Latex-free)", "Quantity: 100 per box", "Feature: Powder-free, high tactile sensitivity"],
+            description: "Premium quality disposable gloves suitable for hygienic care and medical procedures. Provides reliable protection and a comfortable, sensitive fit."
+        },
+        "First Aid Kits": {
+            name: "Essential Home First Aid Kit",
+            price: 800,
+            image: "Images/first-aid.jpeg",
+            specs: ["Contents: Bandages, antiseptic wipes, gauze, scissors, thermometer", "Feature: Compact, portable, and comprehensive", "Application: Home emergencies, wound care, basic injury treatment"],
+            description: "A complete kit with essential items for emergency preparedness and immediate treatment of minor injuries, burns, and cuts at home or while traveling."
+        }
+    };
+
+    function loadProductDetail() {
+        // 1. Get product name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+
+        const product = surgicalProductData[productName];
+        const container = document.getElementById('product-content');
+
+        if (!product) {
+            container.innerHTML = `<p style="text-align:center; width:100%; color:red;">Product not found.</p>`;
+            return;
+        }
+
+        // 2. Build the HTML content
+        const specsList = product.specs.map(spec => `<li>**${spec.split(':')[0].trim()}**: ${spec.split(':')[1].trim()}</li>`).join('');
+
+        container.innerHTML = `
+            <div class="product-images">
+                <img src="${product.image}" alt="${product.name}" class="main-image">
+            </div>
+            
+            <div class="product-info">
+                <h1>${product.name}</h1>
+                <p class="price">₹${product.price}</p>
+                
+                <div class="description">
+                    <h3>About this Item</h3>
+                    <p>${product.description}</p>
+
+                    <h3>Key Specifications</h3>
+                    <ul>
+                        ${specsList}
+                    </ul>
+                </div>
+                
+                <div class="order-box">
+                     <p style="margin-bottom: 10px; font-weight: bold; color: #333;">Price: ₹${product.price}</p>
+                     <button class="btn" onclick="addToCart('${product.name}', ${product.price}); window.location.href='cart.html'">Add to Cart</button>
+                     <p style="font-size: 0.9em; color: #555; margin-top: 15px;">Delivery in 3-5 business days</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // Call the function on page load
+    loadProductDetail();
+  </script>
+</body>
+</html>

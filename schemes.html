@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Government Schemes - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Government Schemes</h1>
+        <p class="header-tagline">Information on Central Government schemes for Persons with Disabilities</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html" class="active">Government Schemes</a>
+      <a href="exercises.html">Exercises</a>
+       <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="container" style="min-height: 60vh;">
+    <h2>Key Government Initiatives (India)</h2>
+    <div class="grid">
+      <div class="card scheme-card">
+        <h3>NIRAMAYA Health Insurance Scheme</h3>
+        <p>Provides health insurance coverage up to ₹1 lakh for individuals with Autism, Cerebral Palsy, Mental Retardation, and Multiple Disabilities.</p>
+        <ul>
+          <li>Covers OPD, medicines, surgeries, and therapies.</li>
+          <li>Single premium regardless of age or disability type.</li>
+          <li>Annual fees: ₹250 for BPL, ₹500 for non-BPL.</li>
+        </ul>
+      </div>
+
+      <div class="card scheme-card">
+        <h3>ADIP Scheme (Aids/Appliances)</h3>
+        <p>Assistance to persons with disabilities for procuring durable, scientifically-manufactured aids and appliances.</p>
+        <ul>
+          <li>Covers mobility aids like wheelchairs and crutches.</li>
+          <li>Financial assistance is up to the full cost (for income up to ₹22,500/month).</li>
+          <li>Also covers essential corrective surgeries prior to device fitment.</li>
+        </ul>
+      </div>
+      
+      <div class="card scheme-card">
+        <h3>Indira Gandhi National Disability Pension Scheme (IGNDPS)</h3>
+        <p>A monthly pension scheme under the National Social Assistance Program.</p>
+        <ul>
+          <li>Pension of ₹300 per month (age 18-79) and ₹500 per month (age 80+).</li>
+          <li>Eligibility requires being BPL and having a disability of 80% or more.</li>
+        </ul>
+      </div>
+      
+       <div class="card scheme-card">
+        <h3>SIPDA Scheme (Accessibility & Rehabilitation)</h3>
+        <p>Focuses on rehabilitation and providing barrier-free access as per the RPwD Act, 2016.</p>
+        <ul>
+          <li>Promotes universal accessibility (ramps, lifts, adapted toilets, accessible websites).</li>
+          <li>Supports skill development programs and the issuance of disability certificates.</li>
+        </ul>
+      </div>
+      
+      <div class="card scheme-card">
+        <h3>National Scholarship Schemes</h3>
+        <p>Various scholarship programs to encourage education for students with disabilities.</p>
+        <ul>
+          <li>Includes Post-matric Scholarship, Top Class Education Scholarship, and National Overseas Scholarships.</li>
+        </ul>
+      </div>
+
+    </div>
+    <p style="text-align: center; margin-top: 40px; color: #666;">**Disclaimer:** For detailed eligibility and application process, please refer to the official government websites like the Department of Empowerment of Persons with Disabilities (DEPwD) or MyScheme portal.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

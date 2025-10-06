@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostics Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0288d1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    h2 {
+      color: #01579b;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .test-services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    .service-card img {
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .service-card h3 {
+      margin: 10px 0;
+      color:  #6a1b9a; margin: 10px 0;
+    }
+    .service-card p {
+      margin: 5px 0;
+      font-weight: bold;
+      color: #444;
+    }
+    .service-card button {
+      padding: 10px 15px;
+      background: #7b1fa2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .booking-form {
+      display: none;
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+    }
+    .booking-form input, .booking-form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+ .booking-form h3 {
+      text-align: center;
+      color: #7b1fa2;
+    }
+
+
+
+
+
+
+    .booking-form button {
+      width: 100%;
+      padding: 14px;
+      background: #43a047; /* ✅ Nice green color */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background: #388e3c;
+    }
+    .history {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+    .history table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .history th, .history td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    .history th {
+      background:   #7b1fa2; color: white;
+} ;
+      
+.cancel-btn{
+background-color: #dc3525;
+color: white;
+border: none;
+padding: 8px 12px;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;}
+
+.cancel-btn:hover{
+  background-color: #c82333;
+};
+    .pay-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #e56b4b;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: 0.3s;
+    }
+    .pay-btn:hover {
+      background: #ff7e5f;
+      transform: scale(1.05);
+    }
+    /* Payment Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 350px;
+      text-align: center;
+    }
+    .modal-content h3 {
+      margin-bottom: 15px;
+      color: #0288d1;
+    }
+    .modal-content select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .modal-content button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .pay-confirm {
+      background: #43a047;
+      color: white;
+    }
+    .pay-cancel {
+      background: #e53935;
+      color: white;
+    }
+    header {
+    text-align: center;
+    padding: 35px 20px 35px 20px; 
+    color: white;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex; 
+    flex-direction: column; /* Mobile: Stacked and centered */
+    align-items: center; 
+    position: relative; 
+}
+
+.header-logo-link {
+    margin-bottom: 20px; 
+    line-height: 0; 
+    z-index: 10; 
+}
+
+.header-logo {
+    width: auto;
+    max-height: 50px; /* Logo size reduced to 50px */
+    border-radius: 0;
+}
+
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header-tagline {
+    font-size: 1.2rem;
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+}
+
+/* NEW: Global Search Bar Styling (Mobile Default - Full Width Below Text) */
+.header-search-container {
+    display: flex;
+    width: 90%;
+    max-width: 450px;
+    margin-top: 15px; /* Separate from tagline */
+    position: relative; 
+    right: auto;
+    top: auto;
+    transform: none;
+    z-index: 10;
+}
+.header-search-container input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+    outline: none;
+    flex-grow: 1;
+    color: #333;
+}
+.header-search-container .search-btn {
+    padding: 8px 15px;
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+.header-search-container .search-btn:hover {
+    background: #e56b4b;
+    transform: none;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items: center;
+        padding: 35px 40px; 
+    }
+    
+    .header-logo-link {
+        margin-right: 20px; 
+        margin-bottom: 0; 
+        position: relative; 
+    }
+    
+    .header-text-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); 
+        width: auto; 
+        text-align: center;
+        pointer-events: none; 
+    }
+    
+    /* Reposition search bar to the far right on desktop */
+    .header-search-container {
+        position: relative; 
+        left: auto;
+        right: 0; /* Anchor to the right edge of the header */
+        margin-left: auto; /* Push to the right */
+        transform: none;
+        max-width: 250px;
+    }
+    
+    /* Ensure the logo is still clickable/interactable */
+    .header-logo-link {
+        pointer-events: all;
+    }
+    .header-title {
+        margin: 0;
+    }
+    .header-tagline {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #1e2a38;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 16px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background: #ff7e5f;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.her{
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  background: linear-gradient(to right, #e2e4e7, #6a11cb);
+}
+.her h1 {
+  font-size: 2.8rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.her p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* FIX 1: Push 'Get in Touch' button down */
+.her .btn {
+  margin-top: 50px; 
+}
+section.her {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+ <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">🧪 Diagnostics Booking</h1>
+        <p class="header-tagline">Book lab tests at home & pay securely</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html" class="active">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+     <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+    
+  </nav>
+<section class="her">
+    <h1>Trusted Diagnostic Care Without Stepping Out.</h1>
+    <p>Because Your Health Deserves Convenience, Accuracy, and Care.</p>
+  </section>
+
+
+
+
+
+  
+
+  
+  <div class="test-services">
+    <div class="service-card">
+      <img src="bloodtest.webp">
+      <h3>Blood Test</h3><p>₹500</p>
+      <button onclick="openBooking('Blood Test',500)">Book Test</button>
+    </div>
+    <div class="service-card">
+      <img src="sugartest.jpg">
+      <h3>Sugar Test</h3><p>₹300</p>
+      <button onclick="openBooking('Sugar Test',300)">Book Test</button>
+    </div>
+    <div class="service-card">
+      <img src="thyroidtest.webp">
+      <h3>Thyroid Test</h3><p>₹700</p>
+      <button onclick="openBooking('Thyroid Test',700)">Book Test</button>
+    </div>
+    <div class="service-card">
+      <img src="vitamindtest.webp">
+      <h3>Vitamin D</h3><p>₹600</p>
+      <button onclick="openBooking('Vitamin D Test',600)">Book Test</button>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="booking-form" id="bookingForm">
+    <h3>Book Your Test</h3>
+    <form id="testForm">
+      <input type="text" id="patientName" placeholder="Your Name" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <textarea id="address" placeholder="Enter Address" required></textarea>
+      <input type="hidden" id="testType">
+      <input type="hidden" id="testPrice">
+      <button type="submit">✅ Confirm Booking</button>
+    </form>
+  </div>
+
+  <!-- History -->
+  <div class="history">
+    <h3>📖 Booking History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th><th>Name</th><th>Date</th><th>Time</th><th>Address</th><th>Price</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+    <button class="pay-btn" onclick="openPayment()">💳 Pay Now</button>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal">
+    <div class="modal-content">
+      <h3>Complete Payment</h3>
+      <select id="paymentMethod">
+        <option value="UPI">UPI</option>
+        <option value="Card">Credit/Debit Card</option>
+        <option value="Cash">Cash on Collection</option>
+      </select>
+      <button class="pay-confirm" onclick="confirmPayment()">Confirm</button>
+      <button class="pay-cancel" onclick="closePayment()">Cancel</button>
+    </div>
+  </div>
+
+<script>
+  function openBooking(test,price){
+    document.getElementById("bookingForm").style.display="block";
+    document.getElementById("testType").value=test;
+    document.getElementById("testPrice").value=price;
+  }
+
+  document.getElementById("testForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    const test=document.getElementById("testType").value;
+    const price=document.getElementById("testPrice").value;
+    const name=document.getElementById("patientName").value;
+    const date=document.getElementById("date").value;
+    const time=document.getElementById("time").value;
+    const address=document.getElementById("address").value;
+
+    const tableBody=document.getElementById("historyBody");
+    const row=document.createElement("tr");
+    row.innerHTML=`
+      <td>${test}</td>
+      <td>${name}</td>
+      <td>${date}</td>
+      <td>${time}</td>
+      <td>${address}</td>
+      <td>₹${price}</td>
+      <td><button class="cancel-btn" onclick="removeBooking(this)"> Cancel</button></td>
+    `;
+    tableBody.appendChild(row);
+
+    document.getElementById("testForm").reset();
+    document.getElementById("bookingForm").style.display="none";
+    alert("✅ Test booked!");
+  });
+
+  function removeBooking(btn){
+    btn.parentElement.parentElement.remove();
+  }
+
+  function openPayment(){ document.getElementById("paymentModal").style.display="flex"; }
+  function closePayment(){ document.getElementById("paymentModal").style.display="none"; }
+  function confirmPayment(){
+    let method=document.getElementById("paymentMethod").value;
+    alert("💳 Payment Successful via "+method+"! ✅");
+    closePayment();
+  }
+</script>
+
+</body>
+</html>
+ 

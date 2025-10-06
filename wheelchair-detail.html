@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wheelchair - Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Product Details</h1>
+        <p class="header-tagline">Get all the information you need before ordering</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html" class="active">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+      <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="container">
+    <div class="product-layout">
+      
+      <div class="product-images">
+        <img src="Images/wheelchair.jpeg" alt="Standard Folding Wheelchair" class="main-image">
+        </div>
+      
+      <div class="product-info">
+        <h1>Regular Mobility Wheelchair - Chrome Finish</h1>
+        <p class="price">₹5,823</p>
+        
+        <div class="description">
+          <h3>Key Specifications</h3>
+          <ul>
+            <li>**Brand:** ARCMOBILITY</li>
+            <li>**Weight:** 15 Kilograms (approx.)</li>
+            <li>**Dimensions:** 40.5W x 25.1W x 64.2H Cm (Folded)</li>
+            <li>**Material:** Sturdy X-frame Folding Mechanism, Chrome Plated Steel.</li>
+          </ul>
+
+          <h3>About this Item (Features)</h3>
+          <ul>
+            <li>**Folding Mechanism:** Easy-to-use, heavy-duty, crisp folding action for storage and transport.</li>
+            <li>**Weight Capacity:** Clinically rated to support individuals up to 100 Kg.</li>
+            <li>**Brakes:** Rear Mag Wheels with reliable brake mechanism for user safety.</li>
+            <li>**Seating:** Open-cell foam-based cushioned armrests and high-quality recliner for optimal spinal posture.</li>
+          </ul>
+        </div>
+        
+        <div class="order-box">
+             <p style="margin-bottom: 10px; font-weight: bold; color: #333;">Price: ₹5,823</p>
+             <button class="btn" onclick="addToCart('Regular Wheelchair', 5823); window.location.href='cart.html'">Add to Cart</button>
+             <p style="font-size: 0.9em; color: #555; margin-top: 15px;">Delivery in 3-5 business days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

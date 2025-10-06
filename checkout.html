@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Checkout</h1>
+        <p class="header-tagline">Complete your order by filling in the details below</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+    <a href="exercises.html">Exercises</a>
+     <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+<section class="container">
+    <div class="checkout-container">
+        
+        <div class="delivery-form">
+            <h2>Delivery Details</h2>
+            <form id="deliveryForm" onsubmit="placeOrder(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="address" placeholder="Delivery Address" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <select id="payment" required>
+                  <option value="">Select Payment Method</option>
+                  <option value="COD">Cash on Delivery</option>
+                  <option value="UPI">UPI / Net Banking</option>
+                  <option value="Card">Credit/Debit Card</option>
+                </select>
+                <button type="submit">Pay and Place Order</button>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="orderSummaryList">
+                <p>Loading order details...</p> 
+            </ul>
+            
+            <div class="summary-total">
+                <span>Grand Total:</span>
+                <span class="total-value">₹<span id="finalTotal">0</span></span>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+<div id="paymentModal" class="modal-overlay">
+    <div class="payment-modal">
+        <h3 id="paymentModalTitle">Processing Payment...</h3>
+        <div id="paymentContent">
+            <p>Please wait...</p>
+        </div>
+        <div id="modalActions">
+            </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

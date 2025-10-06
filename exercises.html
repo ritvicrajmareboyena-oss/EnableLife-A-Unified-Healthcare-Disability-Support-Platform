@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Exercises</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header>
+     <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Accessible Exercises</h1>
+        <p class="header-tagline">Click an exercise to see how it’s done 👇</p>
+    </div>
+    
+     <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html" class="active">Exercises</a>
+     <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+    
+  </nav>
+<section class="her">
+    <h1>Fall in love with taking care of yourself.</h1>
+    <p>Take care of your body. It’s the only place you have to live.</p>
+  </section>
+
+
+  <section class="exercise-grid">
+    <div class="exercise-card" onclick="playVideo('https://www.youtube.com/embed/wfDTp2GogaQ')">
+      <div class="card-image">
+        <img src="breathing.webp" alt="Breathing Exercise">
+      </div>
+      <h3>Breathing Exercise</h3>
+      <p>Calm your mind and improve focus</p>
+    </div>
+
+    <div class="exercise-card" onclick="playVideo('https://www.youtube.com/embed/amFG52sAULA')">
+      <div class="card-image">
+        <img src="stretching.jpeg" alt="Stretching Exercise">
+      </div>
+      <h3>Stretching</h3>
+      <p>Gentle stretches for mobility</p>
+    </div>
+
+    <div class="exercise-card" onclick="playVideo('https://www.youtube.com/embed/jLoWDTJvPyU')">
+      <div class="card-image">
+        <img src="seated yoga.jpg" alt="Seated Yoga">
+      </div>
+      <h3>Seated Yoga</h3>
+      <p>Relaxing moves for flexibility</p>
+    </div>
+
+    <div class="exercise-card" onclick="playVideo('https://www.youtube.com/embed/UgtSjBQiz_A')">
+      <div class="card-image">
+        <img src="arm mobility.jpg" alt="Arm Mobility">
+      </div>
+      <h3>Arm Mobility</h3>
+      <p>Simple moves for upper body strength</p>
+    </div>
+  </section>
+
+  <section id="video-section" class="hidden">
+    <h2>How to do it</h2>
+    <div class="video-container">
+      <iframe id="exerciseVideo" width="100%" height="400"
+              src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script src="script2.js"></script>
+ 
+
+</body>
+</html>

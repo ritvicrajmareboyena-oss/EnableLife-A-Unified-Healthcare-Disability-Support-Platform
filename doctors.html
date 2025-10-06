@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Doctor - Disability Support Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">Book a Doctor</h1>
+        <p class="header-tagline">Connect with top specialists for personalized care</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html" class="active">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+     <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+  </nav>
+
+  <section class="hero">
+    <h1>Your Health, Our Priority</h1>
+    <p>Book an appointment with experienced doctors who specialize in disability care and rehabilitation.</p>
+  </section>
+
+  <section class="grid container" id="card-list" style="margin-top:40px;">
+    <div class="card" data-name="Dr. Ramesh Orthopedic Specialist">
+      <img src="Images/doctor1.jpeg" alt="Dr. Ramesh" class="doctor-img">
+      <h3>Dr. Ramesh</h3>
+      <p>Orthopedic Specialist</p>
+      <p class="experience">Experience: 15+ Years</p>
+      <button onclick="bookNow('Dr. Ramesh')" class="btn">Book Now</button>
+    </div>
+
+    <div class="card" data-name="Dr. Priya Neurologist">
+      <img src="Images/doctor2.jpeg" alt="Dr. Priya" class="doctor-img">
+      <h3>Dr. Priya</h3>
+      <p>Neurologist</p>
+      <p class="experience">Experience: 10+ Years</p>
+      <button onclick="bookNow('Dr. Priya')" class="btn">Book Now</button>
+    </div>
+
+    <div class="card" data-name="Dr. Arun Rehabilitation Expert">
+      <img src="Images/doctor3.jpeg" alt="Dr. Arun" class="doctor-img">
+      <h3>Dr. Arun</h3>
+      <p>Rehabilitation Expert</p>
+      <p class="experience">Experience: 12+ Years</p>
+      <button onclick="bookNow('Dr. Arun')" class="btn">Book Now</button>
+    </div>
+
+    <div class="card" data-name="Dr. Meera Physiotherapist">
+      <img src="Images/doctor4.jpeg" alt="Dr. Meera" class="doctor-img">
+      <h3>Dr. Meera</h3>
+      <p>Physiotherapist</p>
+      <p class="experience">Experience: 8+ Years</p>
+      <button onclick="bookNow('Dr. Meera')" class="btn">Book Now</button>
+    </div>
+  </section>
+
+   
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Book Appointment</h2>
+     <form id="bookingForm">
+        <label for="patientName">Your Name:</label>
+        <input type="text" id="patientName" name="patientName" placeholder="Enter your name" required>
+
+        <label for="appointmentDate">Preferred Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+        <label for="appointmentTime">Preferred Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+        <button type="submit" class="btn">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Disability Support Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('bookingModal');
+    const modalTitle = document.getElementById('modalTitle');
+
+    // Open modal
+    function bookNow(doctorName) {
+      modal.style.display = 'block';
+      modalTitle.textContent = `Book Appointment with ${doctorName}`;
+    }
+
+    // Close modal
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it (Verified Fix)
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Handle booking form
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your appointment has been booked successfully!');
+      closeModal();
+      this.reset();
+    });
+  </script>
+</body>
+</html>

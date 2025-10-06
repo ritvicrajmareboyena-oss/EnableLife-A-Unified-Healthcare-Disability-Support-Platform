@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Nursing Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #dff1ff, #f8fbff);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #023e8a;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .nurse-services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .service-card h3 {
+      margin: 10px 0;
+      color: #6a1b9a;
+    }
+
+    .service-card button {
+      padding: 10px 15px;
+      background: #7b1fa2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .service-card button:hover {
+      background: #6a1b9a;
+    }
+
+    /* Booking Form */
+    .booking-form {
+      display: none;
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .booking-form h3 {
+      text-align: center;
+      color: #7b1fa2;
+    }
+
+    .booking-form input, .booking-form textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .booking-form button {
+      width: 100%;
+      padding: 14px;
+      background: #43a047; /* ✅ Nice green color */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .booking-form button:hover {
+      background: #388e3c;
+    }
+
+    /* Booking History */
+    .history {
+      max-width: 950px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .history table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .history th, .history td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .history th {
+      background: #7b1fa2; color: white;
+      color: white;
+    }
+
+    .cancel-btn, .reschedule-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .cancel-btn {
+      background: #e63946;
+    }
+    .cancel-btn:hover {
+      background: #c1121f;
+    }
+
+    .reschedule-btn {
+      background: #ff7e5f;
+    }
+    .reschedule-btn:hover {
+      background: #fb8500;
+    }
+
+ header {
+    text-align: center;
+    padding: 35px 20px 35px 20px; 
+    color: white;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex; 
+    flex-direction: column; /* Mobile: Stacked and centered */
+    align-items: center; 
+    position: relative; 
+}
+
+.header-logo-link {
+    margin-bottom: 20px; 
+    line-height: 0; 
+    z-index: 10; 
+}
+
+.header-logo {
+    width: auto;
+    max-height: 50px; /* Logo size reduced to 50px */
+    border-radius: 0;
+}
+
+.header-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header-tagline {
+    font-size: 1.2rem;
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+}
+
+/* NEW: Global Search Bar Styling (Mobile Default - Full Width Below Text) */
+.header-search-container {
+    display: flex;
+    width: 90%;
+    max-width: 450px;
+    margin-top: 15px; /* Separate from tagline */
+    position: relative; 
+    right: auto;
+    top: auto;
+    transform: none;
+    z-index: 10;
+}
+.header-search-container input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+    outline: none;
+    flex-grow: 1;
+    color: #333;
+}
+.header-search-container .search-btn {
+    padding: 8px 15px;
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+.header-search-container .search-btn:hover {
+    background: #e56b4b;
+    transform: none;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items: center;
+        padding: 35px 40px; 
+    }
+    
+    .header-logo-link {
+        margin-right: 20px; 
+        margin-bottom: 0; 
+        position: relative; 
+    }
+    
+    .header-text-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); 
+        width: auto; 
+        text-align: center;
+        pointer-events: none; 
+    }
+    
+    /* Reposition search bar to the far right on desktop */
+    .header-search-container {
+        position: relative; 
+        left: auto;
+        right: 0; /* Anchor to the right edge of the header */
+        margin-left: auto; /* Push to the right */
+        transform: none;
+        max-width: 250px;
+    }
+    
+    /* Ensure the logo is still clickable/interactable */
+    .header-logo-link {
+        pointer-events: all;
+    }
+    .header-title {
+        margin: 0;
+    }
+    .header-tagline {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #1e2a38;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 16px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background: #ff7e5f;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.her{
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  background: linear-gradient(to right, #e2e4e7, #6a11cb);
+}
+.her h1 {
+  font-size: 2.8rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.her p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* FIX 1: Push 'Get in Touch' button down */
+.her .btn {
+  margin-top: 50px; 
+}
+section.her {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<header>
+    <a href="index.html" class="header-logo-link">
+        <img src="Images/logo.jpeg" alt="EnableLife Logo - Unified Healthcare & Disability Support Platform" class="header-logo">
+    </a>
+    <div class="header-text-container">
+        <h1 class="header-title">🏥 Home Nursing Services</h1>
+        <p class="header-tagline">Professional Nurses for Recovery, Wound Care, and Daily Needs</p>
+    </div>
+    <div class="header-search-container">
+        <input type="text" id="globalSearchBar" placeholder="Search products, doctors, services..." onkeyup="if(event.key === 'Enter') globalSearch()">
+        <button onclick="globalSearch()" class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medicine.html">Medicine</a>
+    <a href="surgical.html">Surgical Items</a>
+    <a href="doctors.html" class="active">Doctors</a>
+    <a href="physiotherapy.html">Physiotherapy</a>
+    <a href="schemes.html">Government Schemes</a>
+     <a href="exercises.html">Exercises</a>
+     <a href="other services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="orders.html">Orders</a>
+    <a href="cart.html">Cart <span id="cart-item-count"></span></a>
+    
+  </nav>
+<section class="her">
+    <h1>Nursing with heart, at home.</h1>
+    <p>Home is the best place to heal, and nursing care makes it possible.</p>
+  </section>
+
+
+
+
+  
+  <div class="nurse-services">
+    <div class="service-card">
+      <img src="recovery.webp" alt="Recovery Care">
+      <h3>Recovery Care</h3>
+      <p>Post-surgery and illness recovery support.</p>
+      <button onclick="openBooking('Recovery Care')">Book Nurse</button>
+    </div>
+
+    <div class="service-card">
+      <img src="wound care.jpg" alt="Wound Care">
+      <h3>Wound Care</h3>
+      <p>Professional wound dressing and monitoring.</p>
+      <button onclick="openBooking('Wound Care')">Book Nurse</button>
+    </div>
+
+    <div class="service-card">
+      <img src="elderly care.jpg" alt="Elderly Care">
+      <h3>Elderly Care</h3>
+      <p>Daily assistance for elderly patients.</p>
+      <button onclick="openBooking('Elderly Care')">Book Nurse</button>
+    </div>
+
+    <div class="service-card">
+      <img src="medication support.jpg" alt="Injection & Medication">
+      <h3>Medication Support</h3>
+      <p>Help with injections, IV drips, and medicines.</p>
+      <button onclick="openBooking('Medication Support')">Book Nurse</button>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="booking-form" id="bookingForm">
+    <h3 id="formTitle">Book Your Nurse</h3>
+    <form id="nurseForm">
+      <input type="text" id="patientName" placeholder="Your Name" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <textarea id="address" placeholder="Enter Address" required></textarea>
+      <input type="hidden" id="serviceType">
+      <input type="hidden" id="editIndex">
+      <button type="submit"> ✅ Confirm Booking</button>
+    </form>
+  </div>
+
+  <!-- Booking History -->
+  <div class="history">
+    <h3>📖 Booking History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function openBooking(service, rowIndex = null) {
+      document.getElementById("bookingForm").style.display = "block";
+      document.getElementById("formTitle").innerText = rowIndex !== null ? "Reschedule Nurse" : "Book Your Nurse";
+      document.getElementById("serviceType").value = service;
+      document.getElementById("editIndex").value = rowIndex !== null ? rowIndex : "";
+    }
+
+    document.getElementById("nurseForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const service = document.getElementById("serviceType").value;
+      const name = document.getElementById("patientName").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const address = document.getElementById("address").value;
+      const editIndex = document.getElementById("editIndex").value;
+
+      const tableBody = document.getElementById("historyBody");
+
+      if (editIndex) {
+        // Update existing row
+        const row = tableBody.rows[editIndex];
+        row.cells[0].innerText = service;
+        row.cells[1].innerText = name;
+        row.cells[2].innerText = date;
+        row.cells[3].innerText = time;
+        row.cells[4].innerText = address;
+
+        alert("🔄 Booking rescheduled successfully!");
+      } else {
+        // Create new row
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+          <td>${service}</td>
+          <td>${name}</td>
+          <td>${date}</td>
+          <td>${time}</td>
+          <td>${address}</td>
+          <td>
+            <button class="reschedule-btn" onclick="rescheduleBooking(this)">Reschedule</button>
+            <button class="cancel-btn" onclick="cancelBooking(this)">Cancel</button>
+          </td>
+        `;
+        tableBody.appendChild(newRow);
+
+        alert("✅ Nurse booked successfully for " + service + "!");
+      }
+
+      document.getElementById("nurseForm").reset();
+      document.getElementById("bookingForm").style.display = "none";
+    });
+
+    function cancelBooking(button) {
+      const row = button.parentElement.parentElement;
+      row.remove();
+      alert("❌ Booking has been cancelled.");
+    }
+
+    function rescheduleBooking(button) {
+      const row = button.parentElement.parentElement;
+      const index = row.rowIndex - 1; // adjust for header row
+      document.getElementById("patientName").value = row.cells[1].innerText;
+      document.getElementById("date").value = row.cells[2].innerText;
+      document.getElementById("time").value = row.cells[3].innerText;
+      document.getElementById("address").value = row.cells[4].innerText;
+      openBooking(row.cells[0].innerText, index);
+    }
+  </script>
+</body>
+</html>
