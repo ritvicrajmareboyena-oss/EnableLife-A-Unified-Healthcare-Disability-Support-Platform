@@ -14,42 +14,48 @@
 ---
 
 ## 📖 Project Description
-✨ **Problem Statement: A unified platform to connect people with disabilities to essential services, including medicine, surgical supplies, and professional healthcare bookings.  
-💡 **Proposed Solution: We transitioned the project from mock client-side data to a functional, modular Node.js/Express backend API, implementing secure authentication (JWT), increasing product stock to 500 across the inventory, and enabling real-time stock-checked order processing.  
+✨ **Problem Statement: A unified platform to connect people with disabilities to essential services, including medicine, surgical supplies, and professional healthcare bookings.
+
+💡 **Proposed Solution: We transitioned the project from mock client-side data to a functional, modular Node.js/Express backend API, implementing secure authentication (JWT), increasing product stock to 500 across the inventory, and enabling real-time stock-checked order processing.
+
 🎯 **Target Users / Use Cases: Concise: 
 
-The platform serves individuals with disabilities and their caregivers, enabling easy access to medical supplies, professional healthcare, and daily living assistance.
+=> Users with Mobility Challenges: Who can easily order necessary surgical items (e.g., wheelchairs, crutches) and medications directly to their home.
 
-Action-Focused: Anyone facing mobility or health challenges, including patients, caregivers, and family members, who need to book medical services and order specialized supplies from home.
+=> Caregivers and Family Members: Who can efficiently book doctors, physiotherapy, or home nursing services on behalf of the patient.
 
-Broadest: Individuals requiring convenient access to specialized services, including medicine, surgical goods, diagnostics, home nursing, and psychological counseling.
+=> Individuals Seeking Mental Health Support: Who can access and book sessions with counselors and psychologists online or in-person.
+
+=> Patients Requiring Diagnostics: Who can book at-home lab tests (e.g., blood, sugar, thyroid tests) for convenience and manage their history.
+
+=> Anyone Needing Daily Assistance: Who can book services for help with daily activities like mobility support, cleaning, or grocery runs.
 
 ---
 
 ## 🔬 Methodology
-1. **Research & Ideation** – Understand problem & brainstorm.  
-2. **Design** – Wireframes, UI/UX, system architecture.  
-3. **Develop** – Implement core features.  
-4. **Test** – Unit/integration tests + user feedback.  
-5. **Deploy** – Host demo, collect metrics.  
-6. **Future Scope** – Next features and improvements.
+1. **Research & Ideation** –  Our process involved Research & Ideation (problem understanding).  
+2. **Design** – Wireframes & Architecture.  
+3. **Develop** – Core feature implementation & API integration.  
+4. **Test** – Unit/integration validation and user feedback  
+5. **Deploy** – Hosting a demo and metric collection
+6. **Future Scope** – Integrate a real-time chat/telemedicine feature for instant doctor consultations, implement personalized government scheme recommendations based on user profiles, and transition the current mock database to a persistent SQL/NoSQL database for enhanced scalability and data integrity..
 
 ---
 
 ## 👥 Team Details
-**Team Name:** `Your Team Name Here`
+**Team Name:** `Team Enable`
 
 | Name | Role | Email |
 |---|---:|---|
-| Member 1 Name| Team Lead | member1@example.com |
-| Member 2 Name| Team Member| member2@example.com |
-| Member 3 Name| Team Member | member3@example.com |(Optional)
-| Member 4 Name| Team Member | member4@example.com |(Optional)
+| Ritvic Raj | Team Lead | 2511cs020660@mallareddyuniversity.ac.in |
+| Diwakar Reddy | Team Member| 2511cs020674@mallareddyuniversity.ac.in |
+| Nishitha | Team Member | 2511cs020676@mallareddyuniversity.ac.in |
+| Vinisha | Team Member | 2511cs020680@mallareddyuniversity.ac.in |
 
 ---
 
 ## 🛠️ Technology Stack
-`React` | `Node.js` | `Firebase` | `Python` | `TensorFlow`
+`HTML` | `CSS` | `Js` | `Youtube Embeds` | `Node.js` | `Express.js` |
 
 ---
 
@@ -64,9 +70,9 @@ Broadest: Individuals requiring convenient access to specialized services, inclu
 ---
 
 ## 📚 References
-- Resource 1  
-- Resource 2  
-- Resource 3
+- Apollo 24/7  
+- Apollo Homecare  
+- Apollo Transport Services
 
 ---
 
