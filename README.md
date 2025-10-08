@@ -60,12 +60,12 @@
 ---
 
 ## 📹 Demonstration Video
-▶️ [YouTube / Google Drive Link](#)
+▶️ [YouTube / Google Drive Link - https://drive.google.com/file/d/1-RdSBf1mx8dsUMi22_TVm0-_z3orIfHb/view](#)
 
 ---
 
 ## 🌐 Deployment
-🔗 [[Live Demo Link](https://drive.google.com/file/d/1-RdSBf1mx8dsUMi22_TVm0-_z3orIfHb/view)](#)
+🔗 [[Live Demo Link](#)
 
 ---
 
