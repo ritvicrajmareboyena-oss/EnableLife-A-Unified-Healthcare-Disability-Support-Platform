@@ -65,7 +65,7 @@
 ---
 
 ## 🌐 Deployment
-🔗 [[Live Demo Link](#)
+🔗 [Live Demo Link](#)
 
 ---
 
